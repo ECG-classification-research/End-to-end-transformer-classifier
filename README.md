@@ -1,5 +1,16 @@
 # ECG CNN-Transformer end-to-end
 
+## Linear INT8: PTQ, QAT và đánh giá Raspberry Pi 4
+
+Đã bổ sung `PTQ/`, `QAT/`, `quantization/` và `evaluate_pi/` để so sánh FP32,
+static PTQ INT8 và static QAT INT8. Cả hai nhánh quantization bắt buộc nhận
+`--checkpoint_path`, `--split_path` và `--output_path`; calibration/fine-tune chỉ
+dùng train indices từ đúng split đã lưu. Evaluate hỗ trợ adapter checkpoint FP32
+PyTorch và ONNX, metric phân loại hiện tại, latency batch 1, parameter, dung lượng
+và MACs/FLOPs tương đương. ONNX evaluation trên Pi không cần cài torch/WFDB.
+
+Xem [hướng dẫn và lệnh chạy](evaluate_pi/README.md).
+
 Project độc lập: CNN Encoder nối trực tiếp Transformer Encoder và head phân loại
 5 lớp AAMI. Toàn bộ mô hình được khởi tạo và huấn luyện cùng lúc bằng một
 `CrossEntropyLoss`. Source trong folder này không import các module của pipeline cũ.

@@ -1,0 +1,5 @@
+# Host training/export. CPU smoke-tested with torch 2.11.0, onnx 1.23.2,
+# onnxruntime 1.31.0, Python 3.13 on Windows. Pi execution requires separate verification.
+-r requirements.txt
+onnx>=1.16,<2
+onnxruntime>=1.20,<2

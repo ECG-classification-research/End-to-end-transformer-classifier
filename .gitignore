@@ -5,3 +5,4 @@ outputs/
 .verification/
 !tests/
 !tests/test_system.py
+*.zip
